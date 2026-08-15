@@ -7,5 +7,30 @@ organization's HL7 v2.5 ER7 converters:
 - [hl7-2-5-to-xml-using-rust](https://github.com/hl7-rust/hl7-2-5-to-xml-using-rust)
 - [hl7-2-5-to-json-using-rust](https://github.com/hl7-rust/hl7-2-5-to-json-using-rust)
 
-Built with GitHub Pages (Jekyll, `jekyll-theme-minimal`). Edit
-[`index.md`](index.md) to change the homepage.
+Built with [SvelteKit](https://svelte.dev/docs/kit) (static adapter) and the
+[Lily Design System](https://github.com/LilyDesignSystem) headless Svelte
+components (`lily-design-system-svelte-headless`), styled with Lily's `light`
+theme stylesheet.
+
+## Development
+
+```sh
+pnpm install
+pnpm dev      # http://localhost:5173
+pnpm build    # static output in build/
+pnpm preview  # preview the production build
+pnpm check    # svelte-check
+```
+
+Deployment is automatic: `.github/workflows/deploy.yml` builds and publishes
+`build/` to GitHub Pages on every push to `main`.
+
+## Layout
+
+```
+src/routes/+layout.svelte   Site chrome — skip link, header, nav, footer
+src/routes/+page.svelte     Home page
+src/routes/spec/+page.svelte  Links out to each project's normative spec
+static/lily-light.css       Lily Design System "light" theme (copied from
+                             lily-design-system/themes/light.css)
+```
