@@ -2,6 +2,8 @@
   import Card from 'lily-design-system-svelte-headless/components/Card/Card.svelte';
   import Badge from 'lily-design-system-svelte-headless/components/Badge/Badge.svelte';
 
+  const er7Example = `PID|1||241900||TEST^FOUAZ`;
+
   const xmlExample = `<PID>
   <PID.1>1</PID.1>
   <PID.3><CX.1>241900</CX.1></PID.3>
@@ -20,9 +22,10 @@
     'ER7 parsing at every level: segments, fields, repetitions (~), components (^), and subcomponents (&).',
     'Dynamic delimiters, read from MSH-1/MSH-2 rather than hardcoded.',
     'Typed names: built-in HL7 v2.5 tables map each field of the common segments and composite types to its data type — Z-segments and uncommon types still convert, using positional generic names.',
-    'Message-structure groups for ACK, ADT_A01, ORM_O01, and ORU_R01.',
+    'Message-structure groups for ACK, ADT_A01, ORM_O01, and ORU_R01, flattened back out again on the way in.',
     'Graceful fallback rather than failure: unknown structures render flat, unknown fields use positional generic names.',
-    'Neither crate is a validator — no schema, cardinality, or table checking is performed.'
+    'The two reverse crates carry no HL7 v2.5 dictionary of their own — they reconstruct a message purely from the position each forward crate already encodes in every element/key name, and re-escape decoded text back to raw ER7.',
+    'None of the four crates is a validator — no schema, cardinality, or table checking is performed.'
   ];
 </script>
 
@@ -35,8 +38,8 @@
     <p class="eyebrow"><Badge label="Organization">hl7-rust</Badge></p>
     <h1>HL7 Rust</h1>
     <p class="lede">
-      Rust libraries and command-line tools that convert HL7 version 2.5 messages from the
-      traditional pipe-delimited ER7 encoding into other representations.
+      Rust libraries and command-line tools that convert HL7 version 2.5 messages between the
+      traditional pipe-delimited ER7 encoding and XML or JSON — in both directions, losslessly.
     </p>
     <div class="cta-row">
       <a class="button" href="https://github.com/hl7-rust">GitHub organization</a>
@@ -59,6 +62,16 @@
         </p>
       </Card>
       <Card
+        heading="hl7-v2-from-xml-into-er7"
+        href="https://github.com/hl7-rust/hl7-v2-from-xml-into-er7"
+        headingLevel={3}
+      >
+        <p>
+          v2.xml XML back to ER7 — reads what the crate above writes, with no HL7 v2.5
+          dictionary of its own.
+        </p>
+      </Card>
+      <Card
         heading="hl7-v2-from-er7-into-json"
         href="https://github.com/hl7-rust/hl7-v2-from-er7-into-json"
         headingLevel={3}
@@ -68,12 +81,24 @@
           v2.xml preserves, using idiomatic JSON instead of XML's constructs.
         </p>
       </Card>
+      <Card
+        heading="hl7-v2-from-json-into-er7"
+        href="https://github.com/hl7-rust/hl7-v2-from-json-into-er7"
+        headingLevel={3}
+      >
+        <p>
+          Typed JSON back to ER7 — reads what the crate above writes, with no HL7 v2.5
+          dictionary of its own.
+        </p>
+      </Card>
     </div>
     <p>
-      Both crates share the same ER7 parser
-      (<a href="https://crates.io/crates/er7"><code>er7</code></a> on crates.io), the same
-      HL7 v2.5 data-type tables, and the same message-structure grammars — only the rendered
-      output format differs.
+      All four crates share the same ER7 parser
+      (<a href="https://crates.io/crates/er7"><code>er7</code></a> on crates.io). The two
+      forward crates share the same HL7 v2.5 data-type tables and message-structure grammars —
+      only the rendered output format differs. The two reverse crates need none of that: each
+      element or key name a forward crate writes already carries its own position, so reversal
+      is purely structural — see each reverse crate's <code>spec/index.md</code> §1.1.
     </p>
   </div>
 </section>
@@ -82,7 +107,7 @@
   <div class="section-inner">
     <h2>Example</h2>
     <p>An ER7 fragment such as:</p>
-    <pre><code>PID|1||241900||TEST^FOUAZ</code></pre>
+    <pre><code>{er7Example}</code></pre>
     <div class="example-grid">
       <div>
         <h3>converts to XML</h3>
@@ -93,6 +118,11 @@
         <pre><code>{jsonExample}</code></pre>
       </div>
     </div>
+    <p>
+      Piping either back through its reverse crate reproduces the original
+      <code>{er7Example}</code> exactly — that round trip is a runnable example in each forward
+      crate's own README.
+    </p>
   </div>
 </section>
 
