@@ -4,8 +4,8 @@ Source for the [HL7 Rust](https://hl7-rust.github.io) GitHub Pages site — a
 landing page linking to the [hl7-rust](https://github.com/hl7-rust)
 organization's HL7 v2.5 ER7 converters:
 
-- [hl7-2-5-to-xml-using-rust](https://github.com/hl7-rust/hl7-2-5-to-xml-using-rust)
-- [hl7-2-5-to-json-using-rust](https://github.com/hl7-rust/hl7-2-5-to-json-using-rust)
+- [hl7-v2-from-er7-into-xml](https://github.com/hl7-rust/hl7-v2-from-er7-into-xml)
+- [hl7-v2-from-er7-into-json](https://github.com/hl7-rust/hl7-v2-from-er7-into-json)
 
 Built with [SvelteKit](https://svelte.dev/docs/kit) (static adapter) and the
 [Lily Design System](https://github.com/LilyDesignSystem) headless Svelte

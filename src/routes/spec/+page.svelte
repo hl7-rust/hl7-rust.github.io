@@ -12,13 +12,13 @@
     </p>
     <ul>
       <li>
-        <a href="https://github.com/hl7-rust/hl7-2-5-to-xml-using-rust/blob/main/spec/index.md"
-          >hl7-2-5-to-xml-using-rust spec</a
+        <a href="https://github.com/hl7-rust/hl7-v2-from-er7-into-xml/blob/main/spec/index.md"
+          >hl7-v2-from-er7-into-xml spec</a
         >
       </li>
       <li>
-        <a href="https://github.com/hl7-rust/hl7-2-5-to-json-using-rust/blob/main/spec/index.md"
-          >hl7-2-5-to-json-using-rust spec</a
+        <a href="https://github.com/hl7-rust/hl7-v2-from-er7-into-json/blob/main/spec/index.md"
+          >hl7-v2-from-er7-into-json spec</a
         >
       </li>
     </ul>

@@ -49,8 +49,8 @@
     <h2>Projects</h2>
     <div class="card-grid">
       <Card
-        heading="hl7-2-5-to-xml-using-rust"
-        href="https://github.com/hl7-rust/hl7-2-5-to-xml-using-rust"
+        heading="hl7-v2-from-er7-into-xml"
+        href="https://github.com/hl7-rust/hl7-v2-from-er7-into-xml"
         headingLevel={3}
       >
         <p>
@@ -59,8 +59,8 @@
         </p>
       </Card>
       <Card
-        heading="hl7-2-5-to-json-using-rust"
-        href="https://github.com/hl7-rust/hl7-2-5-to-json-using-rust"
+        heading="hl7-v2-from-er7-into-json"
+        href="https://github.com/hl7-rust/hl7-v2-from-er7-into-json"
         headingLevel={3}
       >
         <p>
