@@ -25,59 +25,61 @@
         > — the RIM backbone classes, coded values, and the three-level message envelope
       </li>
       <li>
-        <a href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-v2-mllp/spec/index.md"
-          >hl7-v2-mllp spec</a
+        <a href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-2-mllp/spec/index.md"
+          >hl7-2-mllp spec</a
         > — HL7 v2 framed on a TCP stream (MLLP)
       </li>
       <li>
-        <a href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-v2-soap/spec/index.md"
-          >hl7-v2-soap spec</a
+        <a href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-2-soap/spec/index.md"
+          >hl7-2-soap spec</a
         > — HL7 v2 carried in a SOAP envelope over HTTP
       </li>
       <li>
         <a
-          href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-v2-from-xsd-into-json-dictionary/spec/index.md"
-          >hl7-v2-from-xsd-into-json-dictionary spec</a
+          href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-2-from-xsd-into-json-dictionary/spec/index.md"
+          >hl7-2-from-xsd-into-json-dictionary spec</a
         > — HL7 v2.xml XSDs → the JSON dictionary <code>hl7-2</code> reads
       </li>
       <li>
         <a
-          href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-v2-xml-lite-helper/spec/index.md"
-          >hl7-v2-xml-lite-helper spec</a
+          href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-2-xml-lite-helper/spec/index.md"
+          >hl7-2-xml-lite-helper spec</a
         > — the shared minimal XML reader the v2.xml-facing crates use
       </li>
     </ul>
     <p>
-      The umbrella <code>hl7</code> crate and <code>hl7-v2-derive</code> have no
-      <code>spec/index.md</code> of their own — <code>hl7</code> is a thin re-export with nothing
-      normative to state, and <code>hl7-v2-derive</code>'s macro behavior is documented in its own
-      README rather than as a spec.
+      The umbrella <code>hl7</code> crate and the two <code>*-derive</code> crates
+      (<code>hl7-2-derive</code>, <code>hl7-3-derive</code>) have no <code>spec/index.md</code> of
+      their own — <code>hl7</code> is a thin re-export with nothing normative to state, and each
+      derive crate's macro behavior is documented in its own README (and, for
+      <code>hl7-3-derive</code>, in <code>hl7-3</code>'s <code>typed</code> module) rather than as
+      a spec.
     </p>
 
     <h2>Format conversions</h2>
     <ul>
       <li>
         <a
-          href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-v2-from-er7-into-xml/spec/index.md"
-          >hl7-v2-from-er7-into-xml spec</a
+          href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-2-from-er7-into-xml/spec/index.md"
+          >hl7-2-from-er7-into-xml spec</a
         > — ER7 → v2.xml XML
       </li>
       <li>
         <a
-          href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-v2-from-xml-into-er7/spec/index.md"
-          >hl7-v2-from-xml-into-er7 spec</a
+          href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-2-from-xml-into-er7/spec/index.md"
+          >hl7-2-from-xml-into-er7 spec</a
         > — v2.xml XML → ER7
       </li>
       <li>
         <a
-          href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-v2-from-er7-into-json/spec/index.md"
-          >hl7-v2-from-er7-into-json spec</a
+          href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-2-from-er7-into-json/spec/index.md"
+          >hl7-2-from-er7-into-json spec</a
         > — ER7 → typed JSON
       </li>
       <li>
         <a
-          href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-v2-from-json-into-er7/spec/index.md"
-          >hl7-v2-from-json-into-er7 spec</a
+          href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-2-from-json-into-er7/spec/index.md"
+          >hl7-2-from-json-into-er7 spec</a
         > — typed JSON → ER7
       </li>
     </ul>

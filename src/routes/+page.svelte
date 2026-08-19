@@ -98,8 +98,8 @@
     <h2>Transports</h2>
     <div class="card-grid">
       <Card
-        heading="hl7-v2-mllp"
-        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-mllp"
+        heading="hl7-2-mllp"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-2-mllp"
         headingLevel={3}
       >
         <p>
@@ -108,8 +108,8 @@
         </p>
       </Card>
       <Card
-        heading="hl7-v2-soap"
-        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-soap"
+        heading="hl7-2-soap"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-2-soap"
         headingLevel={3}
       >
         <p>
@@ -126,8 +126,8 @@
     <h2>Format conversions</h2>
     <div class="card-grid">
       <Card
-        heading="hl7-v2-from-er7-into-xml"
-        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-from-er7-into-xml"
+        heading="hl7-2-from-er7-into-xml"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-2-from-er7-into-xml"
         headingLevel={3}
       >
         <p>
@@ -136,8 +136,8 @@
         </p>
       </Card>
       <Card
-        heading="hl7-v2-from-xml-into-er7"
-        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-from-xml-into-er7"
+        heading="hl7-2-from-xml-into-er7"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-2-from-xml-into-er7"
         headingLevel={3}
       >
         <p>
@@ -146,8 +146,8 @@
         </p>
       </Card>
       <Card
-        heading="hl7-v2-from-er7-into-json"
-        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-from-er7-into-json"
+        heading="hl7-2-from-er7-into-json"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-2-from-er7-into-json"
         headingLevel={3}
       >
         <p>
@@ -156,8 +156,8 @@
         </p>
       </Card>
       <Card
-        heading="hl7-v2-from-json-into-er7"
-        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-from-json-into-er7"
+        heading="hl7-2-from-json-into-er7"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-2-from-json-into-er7"
         headingLevel={3}
       >
         <p>
@@ -182,8 +182,8 @@
     <h2>Tooling</h2>
     <div class="card-grid">
       <Card
-        heading="hl7-v2-derive"
-        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-derive"
+        heading="hl7-2-derive"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-2-derive"
         headingLevel={3}
       >
         <p>
@@ -193,8 +193,19 @@
         </p>
       </Card>
       <Card
-        heading="hl7-v2-from-xsd-into-json-dictionary"
-        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-from-xsd-into-json-dictionary"
+        heading="hl7-3-derive"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-3-derive"
+        headingLevel={3}
+      >
+        <p>
+          Derive macro for the <code>hl7-3</code> crate: <code>#[derive(FromElement)]</code> maps
+          struct fields to HL7 v3 XML element attributes and children. Used through
+          <code>hl7-3</code>'s <code>derive</code> feature, not directly.
+        </p>
+      </Card>
+      <Card
+        heading="hl7-2-from-xsd-into-json-dictionary"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-2-from-xsd-into-json-dictionary"
         headingLevel={3}
       >
         <p>
@@ -204,8 +215,8 @@
         </p>
       </Card>
       <Card
-        heading="hl7-v2-xml-lite-helper"
-        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-xml-lite-helper"
+        heading="hl7-2-xml-lite-helper"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-2-xml-lite-helper"
         headingLevel={3}
       >
         <p>
