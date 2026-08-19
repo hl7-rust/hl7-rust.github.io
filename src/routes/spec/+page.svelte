@@ -14,10 +14,15 @@
     <h2>Core, transports, and tooling</h2>
     <ul>
       <li>
-        <a href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-v2/spec/index.md"
-          >hl7-v2 spec</a
+        <a href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-2/spec/index.md"
+          >hl7-2 spec</a
         > — the HL7 v2 dictionary: data types, message structures, parsing modes, mutation,
         validation
+      </li>
+      <li>
+        <a href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-3/spec/index.md"
+          >hl7-3 spec</a
+        > — the RIM backbone classes, coded values, and the three-level message envelope
       </li>
       <li>
         <a href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-v2-mllp/spec/index.md"
@@ -33,7 +38,7 @@
         <a
           href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-v2-from-xsd-into-json-dictionary/spec/index.md"
           >hl7-v2-from-xsd-into-json-dictionary spec</a
-        > — HL7 v2.xml XSDs → the JSON dictionary <code>hl7-v2</code> reads
+        > — HL7 v2.xml XSDs → the JSON dictionary <code>hl7-2</code> reads
       </li>
       <li>
         <a

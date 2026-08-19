@@ -52,11 +52,11 @@
 <section class="section">
   <div class="section-inner">
     <h2>Core</h2>
-    <p>Everything else in the ecosystem is built on these two crates.</p>
+    <p>The standards themselves, and the umbrella crate that re-exports them.</p>
     <div class="card-grid">
       <Card
-        heading="hl7-v2"
-        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2"
+        heading="hl7-2"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-2"
         headingLevel={3}
         class="card-featured"
       >
@@ -68,14 +68,25 @@
         </p>
       </Card>
       <Card
+        heading="hl7-3"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-3"
+        headingLevel={3}
+      >
+        <p>
+          HL7 v3 for Rust: the Reference Information Model (RIM) backbone classes, coded values,
+          and the three-level message envelope (transport wrapper, control act wrapper, domain
+          payload). A foundation, not a full implementation.
+        </p>
+      </Card>
+      <Card
         heading="hl7"
         href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7"
         headingLevel={3}
       >
         <p>
           The umbrella crate: re-exports one module per HL7 standard —
-          <code>hl7::v2</code> today, with room for <code>hl7::v3</code> and
-          <code>hl7::fhir</code> as those standards get implemented.
+          <code>hl7::v2</code> and <code>hl7::v3</code> today, with room for
+          <code>hl7::fhir</code> as that standard gets implemented.
         </p>
       </Card>
     </div>
@@ -176,9 +187,9 @@
         headingLevel={3}
       >
         <p>
-          Derive macros for the <code>hl7-v2</code> crate: <code>#[derive(FromHl7)]</code> and
+          Derive macros for the <code>hl7-2</code> crate: <code>#[derive(FromHl7)]</code> and
           <code>#[derive(ToHl7)]</code> map struct fields to HL7 v2 message paths. Used through
-          <code>hl7-v2</code>'s <code>derive</code> feature, not directly.
+          <code>hl7-2</code>'s <code>derive</code> feature, not directly.
         </p>
       </Card>
       <Card
@@ -189,7 +200,7 @@
         <p>
           Reads a directory of HL7 v2 XML Schema Definition (XSD) files — the v2.xml encoding, as
           published or as a vendor customised it — and writes the JSON dictionary the
-          <code>hl7-v2</code> crates read.
+          <code>hl7-2</code> crate reads.
         </p>
       </Card>
       <Card
@@ -198,7 +209,7 @@
         headingLevel={3}
       >
         <p>
-          A small, dependency-free XML reader shared by the <code>hl7-v2</code> crates: elements,
+          A small, dependency-free XML reader shared by the <code>hl7-2</code> crates: elements,
           attributes, text, and nesting, for documents whose shape you already know, with
           namespace prefixes ignored rather than resolved.
         </p>
