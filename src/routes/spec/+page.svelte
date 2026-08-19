@@ -35,6 +35,11 @@
         > — HL7 v2 carried in a SOAP envelope over HTTP
       </li>
       <li>
+        <a href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-3-soap/spec/index.md"
+          >hl7-3-soap spec</a
+        > — HL7 v3 carried in a SOAP envelope over HTTP
+      </li>
+      <li>
         <a
           href="https://github.com/hl7-rust/hl7-rust/blob/main/hl7-2-from-xsd-into-json-dictionary/spec/index.md"
           >hl7-2-from-xsd-into-json-dictionary spec</a

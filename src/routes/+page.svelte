@@ -117,6 +117,17 @@
           that carry HL7 version 2 messages over HTTP instead of MLLP.
         </p>
       </Card>
+      <Card
+        heading="hl7-3-soap"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-3-soap"
+        headingLevel={3}
+      >
+        <p>
+          HL7 v3 over SOAP: the envelope, faults, message carriage, WSDL, and the real HL7 v3
+          acknowledgement (<code>MCCI_IN000002UV01</code>) — SOAP is v3's own historically
+          dominant transport, not an alternative to something else.
+        </p>
+      </Card>
     </div>
   </div>
 </section>
