@@ -38,8 +38,10 @@
     <p class="eyebrow"><Badge label="Organization">hl7-rust</Badge></p>
     <h1>HL7 Rust</h1>
     <p class="lede">
-      Rust libraries and command-line tools that convert HL7 version 2.5 messages between the
-      traditional pipe-delimited ER7 encoding and XML or JSON — in both directions, losslessly.
+      Rust libraries and command-line tools for HL7 version 2.5: a parser, dictionary, and
+      validator at the core; MLLP and SOAP transports; and converters that move messages
+      losslessly, in both directions, between the traditional pipe-delimited ER7 encoding and
+      XML or JSON.
     </p>
     <div class="cta-row">
       <a class="button" href="https://github.com/hl7-rust">GitHub organization</a>
@@ -49,11 +51,72 @@
 
 <section class="section">
   <div class="section-inner">
-    <h2>Projects</h2>
+    <h2>Core</h2>
+    <p>Everything else in the ecosystem is built on these two crates.</p>
+    <div class="card-grid">
+      <Card
+        heading="hl7-v2"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2"
+        headingLevel={3}
+        class="card-featured"
+      >
+        <p><Badge type="success" label="This is the main crate">Start here</Badge></p>
+        <p>
+          HL7 v2 (releases 2.1-2.9) for Rust: parse, navigate, validate, modify, and render HL7
+          version 2 messages, in three modes — generic, schema-based, and struct-based. Also a
+          CLI (<code>hl7-v2</code>). This is what everything else in the ecosystem builds on.
+        </p>
+      </Card>
+      <Card
+        heading="hl7"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7"
+        headingLevel={3}
+      >
+        <p>
+          The umbrella crate: re-exports one module per HL7 standard —
+          <code>hl7::v2</code> today, with room for <code>hl7::v3</code> and
+          <code>hl7::fhir</code> as those standards get implemented.
+        </p>
+      </Card>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="section-inner">
+    <h2>Transports</h2>
+    <div class="card-grid">
+      <Card
+        heading="hl7-v2-mllp"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-mllp"
+        headingLevel={3}
+      >
+        <p>
+          HL7 v2 MLLP: the Minimal Lower Layer Protocol that frames HL7 version 2 messages on a
+          TCP stream. Framing, streaming, acknowledgements, and a transport trait.
+        </p>
+      </Card>
+      <Card
+        heading="hl7-v2-soap"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-soap"
+        headingLevel={3}
+      >
+        <p>
+          HL7 v2 over SOAP: the envelope, faults, payload carriage, WSDL, and response evaluation
+          that carry HL7 version 2 messages over HTTP instead of MLLP.
+        </p>
+      </Card>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <h2>Format conversions</h2>
     <div class="card-grid">
       <Card
         heading="hl7-v2-from-er7-into-xml"
-        href="https://github.com/hl7-rust/hl7-v2-from-er7-into-xml"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-from-er7-into-xml"
         headingLevel={3}
       >
         <p>
@@ -63,7 +126,7 @@
       </Card>
       <Card
         heading="hl7-v2-from-xml-into-er7"
-        href="https://github.com/hl7-rust/hl7-v2-from-xml-into-er7"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-from-xml-into-er7"
         headingLevel={3}
       >
         <p>
@@ -73,7 +136,7 @@
       </Card>
       <Card
         heading="hl7-v2-from-er7-into-json"
-        href="https://github.com/hl7-rust/hl7-v2-from-er7-into-json"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-from-er7-into-json"
         headingLevel={3}
       >
         <p>
@@ -83,7 +146,7 @@
       </Card>
       <Card
         heading="hl7-v2-from-json-into-er7"
-        href="https://github.com/hl7-rust/hl7-v2-from-json-into-er7"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-from-json-into-er7"
         headingLevel={3}
       >
         <p>
@@ -100,6 +163,47 @@
       element or key name a forward crate writes already carries its own position, so reversal
       is purely structural — see each reverse crate's <code>spec/index.md</code> §1.1.
     </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <h2>Tooling</h2>
+    <div class="card-grid">
+      <Card
+        heading="hl7-v2-derive"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-derive"
+        headingLevel={3}
+      >
+        <p>
+          Derive macros for the <code>hl7-v2</code> crate: <code>#[derive(FromHl7)]</code> and
+          <code>#[derive(ToHl7)]</code> map struct fields to HL7 v2 message paths. Used through
+          <code>hl7-v2</code>'s <code>derive</code> feature, not directly.
+        </p>
+      </Card>
+      <Card
+        heading="hl7-v2-from-xsd-into-json-dictionary"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-from-xsd-into-json-dictionary"
+        headingLevel={3}
+      >
+        <p>
+          Reads a directory of HL7 v2 XML Schema Definition (XSD) files — the v2.xml encoding, as
+          published or as a vendor customised it — and writes the JSON dictionary the
+          <code>hl7-v2</code> crates read.
+        </p>
+      </Card>
+      <Card
+        heading="hl7-v2-xml-lite-helper"
+        href="https://github.com/hl7-rust/hl7-rust/tree/main/hl7-v2-xml-lite-helper"
+        headingLevel={3}
+      >
+        <p>
+          A small, dependency-free XML reader shared by the <code>hl7-v2</code> crates: elements,
+          attributes, text, and nesting, for documents whose shape you already know, with
+          namespace prefixes ignored rather than resolved.
+        </p>
+      </Card>
+    </div>
   </div>
 </section>
 
@@ -169,6 +273,10 @@
 
   .cta-row :global(.button:hover) {
     background-color: var(--color-base-200, #f5f5f4);
+  }
+
+  .card-grid :global(.card-featured) {
+    border: 2px solid var(--color-primary, #4f39f6);
   }
 
   .section-alt {
